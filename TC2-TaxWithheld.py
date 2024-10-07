@@ -1,3 +1,6 @@
+"""Student Name:krishna Priyanka Garikapati
+Student No:W0502117
+Techcheck#2"""
 # Tax Withheld Calculator
 
 # Write a console program that calculates the total amount of tax withheld from an employee’s weekly salary.
@@ -11,15 +14,26 @@
 # The tax deduction for dependents is calculated at 2.0% of the employee’s salary per dependent.
 
 def main():
-    # YOUR CODE STARTS HERE, each line must be indented (one tab)
+  #TotalWithheldTax=ProvincialTaxWithheld + FederalTaxWithheld-per dependendent tax deduction
+  #TotalTakehome=totalweeklysalary-TotalWithheldTax
+  
+  #Input variable
+ WeeklySalary=float(input("Please enter full amount of your weekly salary:"))
+ Dependents=int(input("How many dependents do you have?:"))
+   
 
+  #Withheld taxs calculations
+ ProvincialTaxWithheld=0.06*WeeklySalary
+ print("\nProvincial Tax Withheld: ${0:.2f}".format(ProvincialTaxWithheld))
+ FederalTaxWithheld=0.25*WeeklySalary
+ print("Federal Tax Withheld: ${0:.2f}".format(FederalTaxWithheld))
+ DependentDeduction=0.02*Dependents*WeeklySalary
+ print("Dependent deduction for",Dependents, "dependents: ${0:.2f}".format(DependentDeduction))
+  
 
-
-
-
-
-
-
-    # YOUR CODE ENDS HERE
-
+  #Total takehome calculation
+ TotalWithheld=ProvincialTaxWithheld+FederalTaxWithheld-DependentDeduction
+ print("Total Withheld: ${0:.2f}".format(TotalWithheld))
+ TotalTakeome=WeeklySalary-TotalWithheld
+ print("Total Take-Home Pay: ${0:.2f}".format(TotalTakeome))
 main()
